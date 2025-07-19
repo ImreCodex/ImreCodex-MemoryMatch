@@ -24,7 +24,7 @@ A cél: megtalálni az összetartozó képpárokat, minél gyorsabban és minél
 
 ## 🔗 Élő verzió:
 
-🔗 [Játssz most!](https://parkereso-imrecodex.netlify.app) *(példa link, ha Netlify-ra is feltöltöd)*
+🔗 [Játssz most!](https://parkereso-new-v1.netlify.app) *(példa link, ha Netlify-ra is feltöltöd)*
 
 ---
 
