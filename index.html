@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Párkereső játék</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Párkereső játék – 2 játékos</h1>
+  <div class="mod-valaszto">
+  <label for="jatekosMod">Válassz módot:</label>
+  <select id="jatekosMod">
+    <option value="1">🧍 1 játékos</option>
+    <option value="2" selected>🧑‍🤝‍🧑 2 játékos</option>
+  </select>
+</div>
+<div class="nev-mezok">
+  <input type="text" id="nev1" placeholder="Játékos 1 neve">
+  <input type="text" id="nev2" placeholder="Játékos 2 neve">
+</div>
+
+<div class="game-board" id="gameBoard"></div>
+<div id="aktualis">🔄 Aktuális: <span id="kiJon">Játékos 1</span></div>
+
+<div id="idoKijelzo">
+  <span class="homokora">⏳</span> Idő: 0 mp
+</div>
+
+<div class="pontok">
+  <div id="j1" class="jatekos-box">
+    👤 Játékos 1: <span id="pont1">0</span>
+    <div id="kepek1" class="kepek-gyujto"></div>
+  </div>
+</div>
+
+<div class="pontok1">
+  <div id="j2" class="jatekos-box">
+    👤 Játékos 2: <span id="pont2">0</span>
+    <div id="kepek2" class="kepek-gyujto"></div>
+  </div>
+</div>
+
+<div id="gyoztes" style="margin-top: 10px; font-size: 1.4em;"></div>
+<button id="ujJatek" style="margin-top: 20px;">🔁 Új játék</button>
+  <script src="script.js"></script>
+</body>
+</html>

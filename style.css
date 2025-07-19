@@ -1,0 +1,251 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(5, 150px);
+  gap: 25px;
+  justify-content: center;
+}
+
+.card {
+  width: 150px;
+  height: 150px;
+  background-color: #444;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  perspective: 1000px;
+}
+
+/* Közepes PC kijelző (pl. kisebb laptop) */
+    @media (min-width: 1080px) and (max-width: 1200px) {
+      .card {
+      width: 100px;
+      height: 100px;
+    }
+    }
+
+    @media (min-width: 1080px) and (max-width: 1200px) {
+      body::before {
+        content: "✅ Portraid – Tablet 1200px aktív!";
+        position: fixed;
+        top: 0;
+        left: 0;
+        color:#111;
+        background: lime;
+        padding: 5px;
+        font-size: 14px;
+        z-index: 9999;
+    }
+    }
+
+    /* Nagy PC és monitor – 27"-ig */
+    @media (min-width: 1201px) and (max-width: 1920px) {
+       body::before {
+        content: "✅ Landscape – Tablet 1920px aktív!";
+        position: fixed;
+        top: 0;
+        left: 0;
+        color:#111;
+        background: lime;
+        padding: 5px;
+        font-size: 14px;
+        z-index: 9999;
+    }
+
+      .card {
+      width: 100px;
+      height: 100px;
+    }
+    }
+
+    @media (min-width: 1201px) and (max-width: 1920px) {
+      
+      body::before {
+        content: "✅ Landscape – Tablet 1920px aktív!";
+        position: fixed;
+        top: 0;
+        left: 0;
+        color:#111;
+        background: lime;
+        padding: 5px;
+        font-size: 14px;
+        z-index: 9999;
+    }
+    }
+
+.card.flip .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+}
+
+/*.card-front {
+  background: #ccc;
+  transform: rotateY(180deg);
+}*/
+
+.card-front {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotateY(180deg);
+}
+
+.card-back {
+  background: url('images/kurama.png') center/cover no-repeat;
+}
+
+#aktualis {
+  font-size: 1.2em;
+  padding: 16px 16px;
+  background: #33333300;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.kepek-gyujto {
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.kepek-gyujto img {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  object-fit: cover;
+  border: 1px solid #fff;
+}
+
+.pontok {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  top: 12%;
+  left:7%;
+  max-width: 200px;
+  gap: 40px;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  padding: 12px 12px;
+}
+
+#j1 {
+  padding: 8px 12px;
+  background: #333;
+  border-radius: 10px;
+}
+
+.pontok1 {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  top: 12%;
+  right:7%;
+  max-width: 200px;
+  gap: 40px;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  padding: 12px 12px;
+}
+
+#j2 {
+  padding: 8px 12px;
+  background: #333;
+  border-radius: 10px;
+}
+
+#ujJatek {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#ujJatek:hover {
+  background-color: #218838;
+}
+
+#gyoztes {
+  color: #f1c40f;
+  font-weight: bold;
+}
+
+.mod-valaszto {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  top: 3%;
+  right:7%;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  color: #fff;
+}
+
+#jatekosMod {
+  margin-left: 10px;
+  padding: 5px;
+  font-size: 1em;
+  border-radius: 5px;
+}
+
+.nev-mezok {
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nev-mezok input {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1em;
+}
+
+/*#idoKijelzo {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #ffc107;
+}*/
+.homokora {
+  display: inline-block;
+  animation: forog 2s infinite linear;
+}
+
+@keyframes forog {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
